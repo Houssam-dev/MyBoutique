@@ -10,7 +10,7 @@ import java.io.Serializable
 @Parcelize
 @Entity
 data class Categorie(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "categorie_id")
     var categorieId: Long,
 
@@ -19,4 +19,4 @@ data class Categorie(
 
     @ColumnInfo(name = "description")
     var description: String
-) : Serializable, Parcelable
+) : Serializable, Parcelable {}

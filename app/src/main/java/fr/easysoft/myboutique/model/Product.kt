@@ -10,7 +10,7 @@ import java.io.Serializable
 @Parcelize
 @Entity
 data class Product(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "product_id")
     var productId: Long,
 
