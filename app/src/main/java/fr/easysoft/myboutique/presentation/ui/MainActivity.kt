@@ -1,7 +1,8 @@
-package fr.easysoft.myboutique
+package fr.easysoft.myboutique.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fr.easysoft.myboutique.R
 
 class MainActivity : AppCompatActivity() {
 
