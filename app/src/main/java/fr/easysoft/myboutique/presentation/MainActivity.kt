@@ -1,4 +1,4 @@
-package fr.easysoft.myboutique.presentation.ui
+package fr.easysoft.myboutique.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
