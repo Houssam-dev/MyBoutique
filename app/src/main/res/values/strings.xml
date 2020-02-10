@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">MyBoutique</string>
 
+    <string name="toolbar_home">Accueil</string>
+    <string name="toolbar_promotions">Promotions</string>
+    <string name="toolbar_products">Produits</string>
+    <string name="toolbar_product_detail">Detail Produit</string>
+    <string name="toolbar_account_user">Compte</string>
+
+    <!--    BOTTOM NAVIGATION VIEW -->
+    <string name="bottom_navigation_menu_accueil">Accueil</string>
+    <string name="bottom_navigation_menu_produits">Produits</string>
+    <string name="bottom_navigation_menu_panier">Panier</string>
+    <string name="bottom_navigation_menu_my_account">Compte</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

@@ -19,5 +19,19 @@
 
     </FrameLayout>
 
+<!--    MAIN SCENE-->
+
+
+<!--    BOTTOM NAVIGATION-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/common_bottom_navigation" />
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
