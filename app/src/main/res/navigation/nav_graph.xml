@@ -26,5 +26,22 @@
         android:id="@+id/loginFragment"
         android:name="fr.easysoft.myboutique.presentation.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeUnregistredFragment"
+            app:destination="@id/homeUnregistredFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeRegistredFragment"
+            app:destination="@id/homeRegistredFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeRegistredFragment"
+        android:name="fr.easysoft.myboutique.presentation.ui.home.client.registred.HomeRegistredFragment"
+        android:label="fragment_home_registred"
+        tools:layout="@layout/fragment_home_registred" />
+    <fragment
+        android:id="@+id/homeUnregistredFragment"
+        android:name="fr.easysoft.myboutique.presentation.ui.home.client.unregistred.HomeUnregistredFragment"
+        android:label="fragment_home_unregistred"
+        tools:layout="@layout/fragment_home_unregistred" />
 </navigation>

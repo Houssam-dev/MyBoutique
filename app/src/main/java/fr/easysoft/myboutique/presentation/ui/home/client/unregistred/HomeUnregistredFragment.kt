@@ -1,28 +1,24 @@
-package fr.easysoft.myboutique.presentation.ui
+package fr.easysoft.myboutique.presentation.ui.home.client.unregistred
 
+import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 
 import fr.easysoft.myboutique.R
-
 
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MainFragment.OnFragmentInteractionListener] interface
+ * [HomeUnregistredFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MainFragment.newInstance] factory method to
+ * Use the [HomeUnregistredFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MainFragment : Fragment() {
-
-    lateinit var navController: NavController;
-    var firstUsageFlag: Boolean = false;
+class HomeUnregistredFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,21 +29,21 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_home_unregistred, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        navController = Navigation.findNavController(view);
-
-        if(firstUsageFlag) {
-            navController!!.navigate(R.id.action_mainFragment_to_firstUsageFragment);
-        }
-        else {
-            navController!!.navigate(R.id.action_mainFragment_to_loginFragment);
-        }
-    }
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     *
+     *
+     * See the Android Training lesson [Communicating with Other Fragments]
+     * (http://developer.android.com/training/basics/fragments/communicating.html)
+     * for more information.
+     */
 
 
     companion object {
@@ -57,10 +53,10 @@ class MainFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MainFragment.
+         * @return A new instance of fragment HomeUnregistredFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance() = MainFragment();
+        fun newInstance() = HomeUnregistredFragment();
     }
 }
