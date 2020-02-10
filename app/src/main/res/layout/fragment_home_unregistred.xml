@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <include layout="@layout/common_toolbar" />
+        <include layout="@layout/common_unregistred_toolbar" />
 
     </FrameLayout>
 
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <include layout="@layout/common_bottom_navigation" />
+        <include layout="@layout/common_unregistred_bottom_nav" />
     </FrameLayout>
 
 
