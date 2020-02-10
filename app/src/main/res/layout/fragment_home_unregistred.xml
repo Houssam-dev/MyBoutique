@@ -7,17 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.home.client.unregistred.HomeUnregistredFragment">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="81dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="169dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="184dp"
-        android:layout_marginBottom="432dp"
-        android:text="HOME"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!--    TOOLBAR-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/common_toolbar" />
+
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
