@@ -22,7 +22,6 @@
 
     <!--    MAIN SCENE-->
 
-    <!--    BOTTOM NAVIGATION-->
 
     <TextView
         android:id="@+id/textView"
@@ -35,6 +34,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
         app:layout_constraintVertical_bias="0.208" />
+
+
+
+    <!--    BOTTOM NAVIGATION-->
 
     <FrameLayout
         android:id="@+id/frameLayout4"

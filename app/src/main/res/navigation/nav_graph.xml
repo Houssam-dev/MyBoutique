@@ -29,11 +29,7 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_homeUnregistredFragment"
-            app:destination="@id/homeUnregistredFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
+            app:destination="@id/homeUnregistredFragment" />
         <action
             android:id="@+id/action_loginFragment_to_homeRegistredFragment"
             app:destination="@id/homeRegistredFragment" />
@@ -50,11 +46,10 @@
         tools:layout="@layout/fragment_home_unregistred" >
         <action
             android:id="@+id/action_homeUnregistredFragment_to_productsFragment"
-            app:destination="@id/productsFragment"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
+            app:destination="@id/productsFragment" />
+        <action
+            android:id="@+id/action_homeUnregistredFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/productsFragment"
@@ -64,10 +59,20 @@
         <action
             android:id="@+id/action_productsFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_homeUnregistredFragment"
+            app:destination="@id/homeUnregistredFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="fr.easysoft.myboutique.presentation.ui.components.cart.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_homeUnregistredFragment"
+            app:destination="@id/homeUnregistredFragment" />
+    </fragment>
 </navigation>

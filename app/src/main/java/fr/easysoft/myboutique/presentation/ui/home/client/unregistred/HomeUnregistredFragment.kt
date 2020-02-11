@@ -52,18 +52,18 @@ class HomeUnregistredFragment : Fragment(), BottomNavigationView.OnNavigationIte
         //(this.activity as MainActivity).makeVisibleUnregistredComponents();
 
         navController = Navigation.findNavController(view);
-
+        common_unregistred_bottom_navigation.selectedItemId = R.id.item_action_accueil
         var response = common_unregistred_bottom_navigation.setOnNavigationItemSelectedListener(this);
     }
 
+    // TODO activity.onBackPressed()
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.item_action_produits -> navController.navigate(R.id.action_homeUnregistredFragment_to_productsFragment);
+            R.id.item_action_produits -> navController.navigate(R.id.action_homeUnregistredFragment_to_productsFragment)
+            R.id.item_action_panier -> navController.navigate(R.id.action_homeUnregistredFragment_to_cartFragment)
         }
-
-
         return true;
     }
-
 
 }
