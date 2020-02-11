@@ -9,6 +9,7 @@
 
     <!--    TOOLBAR-->
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +21,19 @@
     </FrameLayout>
 
 <!--    MAIN SCENE-->
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="91dp"
+        android:layout_height="34dp"
+        android:text="Accueil"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
 <!--    BOTTOM NAVIGATION-->
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,6 +42,8 @@
 
         <include layout="@layout/common_unregistred_bottom_nav" />
     </FrameLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

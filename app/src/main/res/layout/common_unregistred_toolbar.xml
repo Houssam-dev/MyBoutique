@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/common_unregistred_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"

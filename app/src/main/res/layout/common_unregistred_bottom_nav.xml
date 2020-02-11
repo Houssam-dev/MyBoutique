@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/common_bottom_navigation"
+        android:id="@+id/common_unregistred_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:menu="@menu/unregistred_bottom_nav_menu"

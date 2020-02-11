@@ -2,25 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_accueil"
+        android:id="@+id/item_action_accueil"
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/bottom_navigation_menu_accueil"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_produits"
+        android:id="@+id/item_action_produits"
         android:enabled="true"
         android:icon="@drawable/ic_shop_black_24dp"
         android:title="@string/bottom_navigation_menu_produits"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_panier"
+        android:id="@+id/item_action_panier"
         android:enabled="true"
         android:icon="@drawable/ic_shopping_cart_black_24dp"
         android:title="@string/bottom_navigation_menu_panier"
         app:showAsAction="ifRoom" />
 <!--    <item-->
-<!--        android:id="@+id/action_my_account"-->
+<!--        android:id="@+id/item_action_my_account"-->
 <!--        android:enabled="true"-->
 <!--        android:icon="@drawable/ic_account_circle_black_24dp"-->
 <!--        android:title="@string/bottom_navigation_menu_my_account"-->

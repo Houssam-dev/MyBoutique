@@ -12,6 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
 import fr.easysoft.myboutique.R
+import fr.easysoft.myboutique.presentation.MainActivity
 import kotlinx.android.synthetic.main.fragment_login.*
 
 
@@ -27,15 +28,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
     lateinit var navController: NavController;
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance() = LoginFragment()
     }
@@ -64,7 +56,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v?.id) {
-            R.id.skip_btn -> navController.navigate(R.id.action_loginFragment_to_homeUnregistredFragment);
+            R.id.skip_btn -> {
+                navController.navigate(R.id.action_loginFragment_to_homeUnregistredFragment)
+            };
         }
     }
 }

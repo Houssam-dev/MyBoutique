@@ -5,10 +5,16 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import fr.easysoft.myboutique.R
+import fr.easysoft.myboutique.presentation.MainActivity
+import kotlinx.android.synthetic.main.common_unregistred_bottom_nav.*
 
 /**
  * A simple [Fragment] subclass.
@@ -18,7 +24,15 @@ import fr.easysoft.myboutique.R
  * Use the [HomeUnregistredFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeUnregistredFragment : Fragment() {
+class HomeUnregistredFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
+
+    lateinit var navController: NavController;
+
+    companion object {
+        @JvmStatic
+        fun newInstance() = HomeUnregistredFragment();
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,31 +46,24 @@ class HomeUnregistredFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home_unregistred, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
+        //(this.activity as MainActivity).makeVisibleUnregistredComponents();
 
+        navController = Navigation.findNavController(view);
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeUnregistredFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance() = HomeUnregistredFragment();
+        var response = common_unregistred_bottom_navigation.setOnNavigationItemSelectedListener(this);
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.item_action_produits -> navController.navigate(R.id.action_homeUnregistredFragment_to_productsFragment);
+        }
+
+
+        return true;
+    }
+
+
 }

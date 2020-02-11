@@ -29,7 +29,11 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_homeUnregistredFragment"
-            app:destination="@id/homeUnregistredFragment" />
+            app:destination="@id/homeUnregistredFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_loginFragment_to_homeRegistredFragment"
             app:destination="@id/homeRegistredFragment" />
@@ -46,7 +50,11 @@
         tools:layout="@layout/fragment_home_unregistred" >
         <action
             android:id="@+id/action_homeUnregistredFragment_to_productsFragment"
-            app:destination="@id/productsFragment" />
+            app:destination="@id/productsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/productsFragment"
