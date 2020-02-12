@@ -17,4 +17,11 @@ class MainActivity : AppCompatActivity() {
 //        common_unregistred_toolbar.visibility = View.GONE;
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        // TODO making onBackPressed more precise
+        //  because it's return to accueil instead of last fragment
+        moveTaskToBack(true);
+    }
 }

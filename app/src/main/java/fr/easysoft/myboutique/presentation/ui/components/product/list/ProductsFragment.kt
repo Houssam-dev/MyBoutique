@@ -1,7 +1,6 @@
 package fr.easysoft.myboutique.presentation.ui.components.product.list
 
-import android.content.Context
-import android.net.Uri
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,14 +15,6 @@ import fr.easysoft.myboutique.R
 import kotlinx.android.synthetic.main.common_unregistred_bottom_nav.*
 
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [ProductsFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [ProductsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProductsFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     lateinit var navController: NavController;
@@ -58,6 +49,6 @@ class ProductsFragment : Fragment(), BottomNavigationView.OnNavigationItemSelect
             R.id.item_action_panier -> navController.navigate(R.id.action_productsFragment_to_cartFragment);
             R.id.item_action_accueil -> navController.navigate(R.id.action_productsFragment_to_homeUnregistredFragment)
         }
-        return true;
+        return false;
     }
 }

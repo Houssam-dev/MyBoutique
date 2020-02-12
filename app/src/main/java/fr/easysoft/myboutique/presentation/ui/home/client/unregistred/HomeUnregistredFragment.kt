@@ -63,7 +63,7 @@ class HomeUnregistredFragment : Fragment(), BottomNavigationView.OnNavigationIte
             R.id.item_action_produits -> navController.navigate(R.id.action_homeUnregistredFragment_to_productsFragment)
             R.id.item_action_panier -> navController.navigate(R.id.action_homeUnregistredFragment_to_cartFragment)
         }
-        return true;
+        return false;
     }
 
 }

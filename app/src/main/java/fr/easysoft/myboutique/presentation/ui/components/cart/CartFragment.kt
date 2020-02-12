@@ -51,6 +51,6 @@ class CartFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
             R.id.item_action_produits -> navController.navigate(R.id.action_cartFragment_to_productsFragment)
         }
 
-        return true;
+        return false;
     }
 }
