@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +8,7 @@
 
     <!--    TOOLBAR-->
     <FrameLayout
-        android:id="@+id/frameLayout3"
+        android:id="@+id/top_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,16 +19,32 @@
 
     </FrameLayout>
 
+
     <!--    MAIN SCENE-->
-
-
-
 
 
     <!--    BOTTOM NAVIGATION-->
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_products"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_frame_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_frame_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_product" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <FrameLayout
-        android:id="@+id/frameLayout4"
+        android:id="@+id/bottom_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,8 +53,6 @@
 
         <include layout="@layout/common_unregistred_bottom_nav" />
     </FrameLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
