@@ -49,7 +49,8 @@ data class MyBoutiqueServiceImpl(
                 productsElectromenager.add(
                     Product(
                         index.toLong(),
-                        value,
+                        "name: ${value}",
+                        "designation: ${value}",
                         (120 + Math.random()).toDouble(),
                         false,
                         "${value}_photo.jpg",
@@ -64,7 +65,8 @@ data class MyBoutiqueServiceImpl(
                 productsMutlimedia.add(
                     Product(
                         index.toLong(),
-                        value,
+                        "name: ${value}",
+                        "designation: ${value}",
                         (120 + Math.random()).toDouble(),
                         false,
                         "${value}_photo.jpg",

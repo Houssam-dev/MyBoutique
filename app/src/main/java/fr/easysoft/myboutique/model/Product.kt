@@ -14,6 +14,9 @@ data class Product(
     @ColumnInfo(name = "product_id")
     var productId: Long,
 
+    @ColumnInfo(name = "name")
+    var name: String,
+
     @ColumnInfo(name = "designation")
     var designation: String,
 
