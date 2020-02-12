@@ -22,9 +22,6 @@
 
     <!--    MAIN SCENE-->
 
-
-    <!--    BOTTOM NAVIGATION-->
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_products"
         android:layout_width="match_parent"
@@ -42,6 +39,8 @@
             tools:listitem="@layout/item_product" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!--    BOTTOM NAVIGATION-->
 
     <FrameLayout
         android:id="@+id/bottom_frame_layout"
