@@ -30,6 +30,9 @@ data class Product(
     @ColumnInfo(name = "picture_data")
     var pictureData: String,
 
+    @ColumnInfo(name = "picture_url")
+    var pictureUrl: String,
+
     @ColumnInfo(name = "amount")
     var amount: Int,
 

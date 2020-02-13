@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.squareup.picasso.Picasso
 
 import fr.easysoft.myboutique.R
 import fr.easysoft.myboutique.presentation.MainActivity
@@ -52,6 +53,11 @@ class LoginFragment : Fragment(), View.OnClickListener {
         navController = Navigation.findNavController(view);
 
         skip_btn.setOnClickListener(this)
+
+        Picasso.get()
+            .load("https://register.wyfegypt.com/images/form-wizard-login.jpg")
+            .placeholder(R.drawable.ic_placeholder_image)
+            .into(image_view_login);
     }
 
     override fun onClick(v: View?) {

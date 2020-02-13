@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso
 import fr.easysoft.myboutique.R
 import fr.easysoft.myboutique.model.Product
 import kotlinx.android.synthetic.main.item_product.view.*
+import timber.log.Timber
 
 class ProductsAdapter(private val products: List<Product>,
                       private val listener: ProductsAdapterListener)
@@ -35,7 +36,6 @@ class ProductsAdapter(private val products: List<Product>,
 
     override fun getItemCount() = products.size;
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products[position];
 
@@ -45,10 +45,13 @@ class ProductsAdapter(private val products: List<Product>,
             productTitle.text = product.name;
             productDesignation.text = product.designation;
 
-//            Picasso.get()
-//                .load(product.pictureUrl)
-//                .placeholder(R.drawable.ic_placeholder_image)
-//                .into(productCover)
+            Timber.i(">>>>>>>>>>> BEFORE Picasso")
+            Picasso.get()
+                .load("https://www.biougnach.ma/4964-large_default/smart-tv-fhd-49-samsung.jpg")
+                .placeholder(R.drawable.ic_placeholder_image)
+                .into(productCover)
+
+            Timber.i("<<<<<<<<<<<<<<<<<<<<<<<<<<<<< AFTER Picasso")
         }
     }
 
@@ -57,6 +60,4 @@ class ProductsAdapter(private val products: List<Product>,
             R.id.card_view_product -> listener.onProductSelected(v.tag as Product);
         }
     }
-
-
 }

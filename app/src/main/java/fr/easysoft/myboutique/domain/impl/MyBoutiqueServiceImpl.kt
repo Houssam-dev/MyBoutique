@@ -53,7 +53,8 @@ data class MyBoutiqueServiceImpl(
                         "designation: ${value}",
                         (120 + Math.random()).toDouble(),
                         false,
-                        "${value}_photo.jpg",
+                        "${value}_photo_data.jpg",
+                        "${value}_photo_url.jpg",
                         (20 + Math.random()).toInt(),
                         1L
                     )
@@ -69,7 +70,8 @@ data class MyBoutiqueServiceImpl(
                         "designation: ${value}",
                         (120 + Math.random()).toDouble(),
                         false,
-                        "${value}_photo.jpg",
+                        "${value}_photo_data.jpg",
+                        "${value}_photo_url.jpg",
                         (20 + Math.random()).toInt(),
                         2L
                     )
