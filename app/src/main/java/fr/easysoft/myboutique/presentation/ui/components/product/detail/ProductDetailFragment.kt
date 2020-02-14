@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,10 +21,16 @@ import timber.log.Timber
 
 private const val ARG_PRODUCT_ID = "productId"
 
+//TODO review layout desing productDetail
+
 class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var navController: NavController;
-    private var product_id: Long = -1L
+    private lateinit var productDetailViewModel: ProductDetailViewModel;
+    private var product: Product? = null;
+
+    private var product_id: Long = -1L;
+
 
     companion object {
         @JvmStatic
@@ -32,8 +40,6 @@ class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemS
                     putLong(ARG_PRODUCT_ID, product_id)
                 }
             }
-
-
         //const val EXTRA_PRODUCT_ID = "fr.easysoft.myboutique.presentation.ui.components.product.detail.productId"
     }
 
@@ -42,7 +48,6 @@ class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemS
         arguments?.let {
             product_id = it.getLong(ARG_PRODUCT_ID);
         }
-//        productId = arguments!!.getString("productId").toString();
     }
 
     override fun onCreateView(
@@ -58,19 +63,28 @@ class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemS
 
         common_unregistred_bottom_navigation.selectedItemId = R.id.item_action_produits;
 
-        //productId = "1"
-        Timber.i(">>>>>>>>>>>>>>>>> productId: ${product_id}")
         navController = Navigation.findNavController(view);
 
-        Timber.i(">>>>>>>>>>> BEFORE Picasso")
+        val factory = ProductDetailViewModelFactory(product_id);
+        productDetailViewModel = ViewModelProvider(this, factory).get(ProductDetailViewModel::class.java);
+        productDetailViewModel.getProduct(product_id).observe(viewLifecycleOwner, Observer { newProduct -> updateProduct(newProduct) })
+
+
+        var response = common_unregistred_bottom_navigation.setOnNavigationItemSelectedListener(this);
+    }
+
+    private fun updateProduct(newProduct: Product?) {
+        Timber.i("[ updateProduct ] productSelected: ${newProduct}");
+
+        with(newProduct) {
+            product_title.text = this?.name;
+            product_designation.text = this?.designation;
+        }
+
         Picasso.get()
             .load("https://www.biougnach.ma/4964-large_default/smart-tv-fhd-49-samsung.jpg")
             .placeholder(R.drawable.ic_placeholder_image)
             .into(product_cover)
-
-        Timber.i("<<<<<<<<<<<<<<<<<<<<<<<<<<<<< AFTER Picasso")
-
-        var response = common_unregistred_bottom_navigation.setOnNavigationItemSelectedListener(this);
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
