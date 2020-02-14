@@ -29,15 +29,15 @@ class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemS
     private lateinit var productDetailViewModel: ProductDetailViewModel;
     private var product: Product? = null;
 
-    private var product_id: Long = -1L;
+    private var productId: Long = -1L;
 
 
     companion object {
         @JvmStatic
-        fun newInstance(productId: String) =
+        fun newInstance() =
             ProductDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putLong(ARG_PRODUCT_ID, product_id)
+                    putLong(ARG_PRODUCT_ID, productId)
                 }
             }
         //const val EXTRA_PRODUCT_ID = "fr.easysoft.myboutique.presentation.ui.components.product.detail.productId"
@@ -46,7 +46,7 @@ class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            product_id = it.getLong(ARG_PRODUCT_ID);
+            productId = it.getLong(ARG_PRODUCT_ID);
         }
     }
 
@@ -65,9 +65,9 @@ class ProductDetailFragment : Fragment(), BottomNavigationView.OnNavigationItemS
 
         navController = Navigation.findNavController(view);
 
-        val factory = ProductDetailViewModelFactory(product_id);
+        val factory = ProductDetailViewModelFactory(productId);
         productDetailViewModel = ViewModelProvider(this, factory).get(ProductDetailViewModel::class.java);
-        productDetailViewModel.getProduct(product_id).observe(viewLifecycleOwner, Observer { newProduct -> updateProduct(newProduct) })
+        productDetailViewModel.getProduct(productId).observe(viewLifecycleOwner, Observer { newProduct -> updateProduct(newProduct) })
 
 
         var response = common_unregistred_bottom_navigation.setOnNavigationItemSelectedListener(this);
