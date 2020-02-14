@@ -85,9 +85,12 @@ class ProductsFragment : Fragment(), BottomNavigationView.OnNavigationItemSelect
 
     override fun onProductSelected(product: Product) {
         Timber.i("[ onProductSelected ] => ${product}")
+
         val bundle = bundleOf(
             "productId" to product.productId
         )
+
+
         navController.navigate(R.id.action_productsFragment_to_productDetailFragment, bundle);
     }
 }
